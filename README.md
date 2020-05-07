@@ -1,29 +1,13 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Demo app for tracking Corona virus statistic
 
-### What is this repository for? ###
+![Simulator Screen Shot - iPhone 11 - 2020-05-07 at 13 20 04](https://user-images.githubusercontent.com/44729824/81287372-50d10f00-906b-11ea-8fce-c603c63b1549.png)
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+## API that was used data - https://corona.lmao.ninja/##
 
-### How do I get set up? ###
+### Frameworks that were used? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* RxSwift
+* PieCharts - https://github.com/i-schuetz/PieCharts
+* Alamofire
