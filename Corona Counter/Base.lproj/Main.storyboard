@@ -475,6 +475,13 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ioj-Kp-FQr">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgX-bi-Lu8">
+                                        <rect key="frame" x="0.0" y="608" width="414" height="304"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="304" id="VE4-tN-XEZ"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDz-zB-X8s">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1047"/>
                                         <subviews>
@@ -721,7 +728,10 @@
                                     <constraint firstItem="dDz-zB-X8s" firstAttribute="leading" secondItem="JZD-Vf-cc3" secondAttribute="leading" id="Mm5-cP-SUQ"/>
                                     <constraint firstItem="dDz-zB-X8s" firstAttribute="trailing" secondItem="JZD-Vf-cc3" secondAttribute="trailing" id="ULU-HJ-L7f"/>
                                     <constraint firstItem="dDz-zB-X8s" firstAttribute="bottom" secondItem="JZD-Vf-cc3" secondAttribute="bottom" id="WPd-rB-edS"/>
+                                    <constraint firstItem="rvv-BE-Bhw" firstAttribute="bottom" secondItem="tgX-bi-Lu8" secondAttribute="bottom" constant="-104" id="hhW-Zf-qTn"/>
+                                    <constraint firstItem="tgX-bi-Lu8" firstAttribute="leading" secondItem="JZD-Vf-cc3" secondAttribute="leading" id="u3J-NA-UTv"/>
                                     <constraint firstItem="dDz-zB-X8s" firstAttribute="top" secondItem="JZD-Vf-cc3" secondAttribute="top" id="wqb-Aj-IJS"/>
+                                    <constraint firstItem="JZD-Vf-cc3" firstAttribute="trailing" secondItem="tgX-bi-Lu8" secondAttribute="trailing" id="yfN-tX-QtF"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="JZD-Vf-cc3"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="rvv-BE-Bhw"/>
@@ -741,6 +751,7 @@
                         <outlet property="activeCasesCardView" destination="qty-2K-8At" id="yZx-4J-fxy"/>
                         <outlet property="activeCasesLbl" destination="qty-2K-8At" id="01z-gR-Fgi"/>
                         <outlet property="backButtonImageView" destination="kNw-w6-M2w" id="wTv-VY-KhV"/>
+                        <outlet property="bottomContainerView" destination="aaa-Re-5eb" id="bHq-K8-0gd"/>
                         <outlet property="countryNameLbl" destination="GDo-bc-69C" id="6Dc-6X-1Pu"/>
                         <outlet property="deathLbl" destination="DeJ-7i-eBO" id="MMj-z9-Uhf"/>
                         <outlet property="majorPercentageLbl" destination="Eq2-22-bH0" id="bKF-yp-pYh"/>

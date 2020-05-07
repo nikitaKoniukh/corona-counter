@@ -48,6 +48,7 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
         setupTapGestureForCurrentCountry()
         setupView()
         showTable()
+        didSelectCollectionViewItem()
         collectionView.rx.setDelegate(self).disposed(by: disposeBag)
 
         coronaApi.fetchAllCountriesTotal { (result) in
@@ -84,6 +85,12 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
                 }
             }
         }.disposed(by: disposeBag)
+    }
+
+    private func didSelectCollectionViewItem() {
+        collectionView.rx.modelSelected(Country.self).subscribe(onNext: { item in
+            self.performSegue(withIdentifier: SEGUE_TO_NEW_DETAILS, sender: item)
+        }).disposed(by: disposeBag)
     }
 
     private func fetchCurrentCountry(currentCountry: Country) {

@@ -27,7 +27,8 @@ class NewDetailViewController: UIViewController {
     @IBOutlet var majorPercentageLbl: UILabel!
     @IBOutlet var minorPercentageLbl: UILabel!
     @IBOutlet var backButtonImageView: UIImageView!
-
+    @IBOutlet var bottomContainerView: UIView!
+    
     var currentCountry: Country!
 
     override func viewDidLoad() {
@@ -75,6 +76,7 @@ class NewDetailViewController: UIViewController {
         activeCasesCardView.setupCardView(cRadius: 8.0, sColor: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), sOffset: CGSize(width: 4, height: 4), sRadius: 4.0, sOpacity: 0.5)
         minorIndicatorView.setupViewWithCornerRadius(cRadius: 4.0)
         seriousIndicatorView.setupViewWithCornerRadius(cRadius: 4.0)
+        bottomContainerView.roundCornersForTwoCorners()
     }
 
 }
