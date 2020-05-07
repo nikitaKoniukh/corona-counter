@@ -1,0 +1,20 @@
+//
+//  Constants.swift
+//  Corona Counter
+//
+//  Created by Nikita Koniukh on 27/04/2020.
+//  Copyright © 2020 Nikita Koniukh. All rights reserved.
+//
+
+import Foundation
+
+
+let BASE_URL = "https://corona.lmao.ninja/v2/countries/"
+
+
+let MAIN_TABLE_VIEW_CELL_ID = "minTableViewCellId"
+let COLLECTION_VIEW_CELL_ID = "collectionViewCountryCellId"
+let SEGUE_TO_DETAIL = "toDetails"
+
+let GET_COUNTRIES_NOTIF = "GetCountriesAndCurrentCountryNotification"
+let GOT_LOCATION_PERMITION_NOTIF = "permissionGranted"
