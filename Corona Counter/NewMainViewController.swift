@@ -45,6 +45,7 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
+        setupTapGestureForCurrentCountry()
         setupView()
         showTable()
         collectionView.rx.setDelegate(self).disposed(by: disposeBag)
@@ -58,6 +59,17 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
                 $0.active > $1.active
             }
             self.countrydDataSourse.onNext(sortedByActiveCases)
+        }
+    }
+
+    func setupTapGestureForCurrentCountry() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTapForCurrentCountry))
+        currentCountryCardView.addGestureRecognizer(tap)
+    }
+
+    @objc func handleTapForCurrentCountry() {
+        if let country = currentCountry {
+            performSegue(withIdentifier: SEGUE_TO_NEW_DETAILS, sender: country)
         }
     }
 
@@ -76,6 +88,7 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
 
     private func fetchCurrentCountry(currentCountry: Country) {
         currentCountryNameLbl.text = currentCountry.country
+        self.currentCountry = currentCountry
         if let imageURL = URL(string: currentCountry.flag){
             currentCountryFlafImage.af.setImage(withURL: imageURL)
         }
@@ -104,6 +117,7 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
 
 
     private func setupView() {
+        self.navigationController?.navigationBar.isHidden = true
         activeCasesCardView.setupCardView(cRadius: 8.0, sColor: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), sOffset: CGSize(width: 4, height: 4), sRadius: 4.0, sOpacity: 0.5)
         minorIndicatorView.setupViewWithCornerRadius(cRadius: 4.0)
         seriousIndicatorView.setupViewWithCornerRadius(cRadius: 4.0)
@@ -173,5 +187,14 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
                 }
             }
         })
+    }
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == SEGUE_TO_NEW_DETAILS) {
+            guard let detailVC = segue.destination as? NewDetailViewController else { return }
+            let destination = sender as! Country
+            detailVC.currentCountry = destination
+        }
     }
 }

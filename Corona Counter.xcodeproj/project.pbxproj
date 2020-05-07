@@ -23,6 +23,7 @@
 		CA27ADC324571AC70091ACD2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27ADC224571AC70091ACD2 /* Constants.swift */; };
 		CA27ADC9245B0BCC0091ACD2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27ADC6245B0BC10091ACD2 /* MainViewController.swift */; };
 		CA27ADCC245B13C20091ACD2 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27ADCB245B13C20091ACD2 /* CountryTableViewCell.swift */; };
+		CA3C16362464316300829090 /* NewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C16352464316300829090 /* NewDetailViewController.swift */; };
 		CA55E22C2461E27800435514 /* UIView+CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA55E22B2461E27800435514 /* UIView+CardView.swift */; };
 		CA55E22F2461E57B00435514 /* NewMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA55E22E2461E57B00435514 /* NewMainViewController.swift */; };
 		CA8C9CCC2463480A001FE4CF /* Number+Commas.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C9CCB2463480A001FE4CF /* Number+Commas.swift */; };
@@ -79,6 +80,7 @@
 		CA27ADC224571AC70091ACD2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CA27ADC6245B0BC10091ACD2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CA27ADCB245B13C20091ACD2 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		CA3C16352464316300829090 /* NewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDetailViewController.swift; sourceTree = "<group>"; };
 		CA55E22B2461E27800435514 /* UIView+CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CardView.swift"; sourceTree = "<group>"; };
 		CA55E22E2461E57B00435514 /* NewMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMainViewController.swift; sourceTree = "<group>"; };
 		CA8C9CCB2463480A001FE4CF /* Number+Commas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+Commas.swift"; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				CA55E22E2461E57B00435514 /* NewMainViewController.swift */,
+				CA3C16352464316300829090 /* NewDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				CA27ADC324571AC70091ACD2 /* Constants.swift in Sources */,
 				CA55E22C2461E27800435514 /* UIView+CardView.swift in Sources */,
 				CA27ADAB2457174A0091ACD2 /* DetailViewController.swift in Sources */,
+				CA3C16362464316300829090 /* NewDetailViewController.swift in Sources */,
 				CA27ADC024571A6E0091ACD2 /* CoronaCounterAPI.swift in Sources */,
 				CA27ADC9245B0BCC0091ACD2 /* MainViewController.swift in Sources */,
 				CA27ADBE245719170091ACD2 /* Country.swift in Sources */,

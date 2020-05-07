@@ -14,7 +14,9 @@ let BASE_URL = "https://corona.lmao.ninja/v2/countries/"
 
 let MAIN_TABLE_VIEW_CELL_ID = "minTableViewCellId"
 let COLLECTION_VIEW_CELL_ID = "collectionViewCountryCellId"
+
 let SEGUE_TO_DETAIL = "toDetails"
+let SEGUE_TO_NEW_DETAILS = "toNewDetails"
 
 let GET_COUNTRIES_NOTIF = "GetCountriesAndCurrentCountryNotification"
 let GOT_LOCATION_PERMITION_NOTIF = "permissionGranted"
