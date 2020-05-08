@@ -8,9 +8,7 @@
 
 import Foundation
 
-
 let BASE_URL = "https://corona.lmao.ninja/v2/countries/"
-
 
 let MAIN_TABLE_VIEW_CELL_ID = "minTableViewCellId"
 let COLLECTION_VIEW_CELL_ID = "collectionViewCountryCellId"

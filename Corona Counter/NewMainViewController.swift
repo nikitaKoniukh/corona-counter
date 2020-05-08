@@ -31,8 +31,8 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
     @IBOutlet var majorPercentageLbl: UILabel!
     @IBOutlet var minorPercentageLbl: UILabel!
     @IBOutlet var collectionView: UICollectionView!
-    
-    //MARK: - Properties
+
+    // MARK: - Properties
     let disposeBag = DisposeBag()
     let coronaApi = CoronaCounterAPI()
     var countrydDataSourse = PublishSubject<[Country]>()
@@ -75,11 +75,10 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
     }
 
     private func showTable() {
-        countrydDataSourse.bind(to: collectionView.rx.items(cellIdentifier: COLLECTION_VIEW_CELL_ID))
-        {(row,country:Country,cell: CountryCollectionViewCell) in
+        countrydDataSourse.bind(to: collectionView.rx.items(cellIdentifier: COLLECTION_VIEW_CELL_ID)) {(_,country:Country,cell: CountryCollectionViewCell) in
             DispatchQueue.main.async {
                 cell.configureCell(country: country)
-                if let imageURL = URL(string: country.flag){
+                if let imageURL = URL(string: country.flag) {
                     cell.flagImageView.image = UIImage()
                     cell.flagImageView.af.setImage(withURL: imageURL)
                 }
@@ -96,7 +95,7 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
     private func fetchCurrentCountry(currentCountry: Country) {
         currentCountryNameLbl.text = currentCountry.country
         self.currentCountry = currentCountry
-        if let imageURL = URL(string: currentCountry.flag){
+        if let imageURL = URL(string: currentCountry.flag) {
             currentCountryFlafImage.af.setImage(withURL: imageURL)
         }
     }
@@ -113,7 +112,7 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
         majorPercentageLbl.text = "\(criticalPercentage)%"
         pieChart.models = [
             PieSliceModel(value: Double(criticalPercentage), color: #colorLiteral(red: 0.9904027581, green: 0.3548480272, blue: 0.3655920029, alpha: 1)),
-            PieSliceModel(value: Double(activeCasesPercentage), color: #colorLiteral(red: 0.3577479124, green: 0.8051960468, blue: 0.9972313046, alpha: 1)),
+            PieSliceModel(value: Double(activeCasesPercentage), color: #colorLiteral(red: 0.3577479124, green: 0.8051960468, blue: 0.9972313046, alpha: 1))
         ]
     }
 
@@ -121,7 +120,6 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
         let criticalPercentage = critical / (activeCases / 100)
         return criticalPercentage
     }
-
 
     private func setupView() {
         self.navigationController?.navigationBar.isHidden = true
@@ -133,7 +131,7 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
         currentCountryCardView.setupCardView(cRadius: 8.0, sColor: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), sOffset: CGSize(width: 4, height: 4), sRadius: 4.0, sOpacity: 0.5)
     }
 
-    //MARK: - CLLocationManager
+    // MARK: - CLLocationManager
     private func checkLocationServices() {
         if CLLocationManager.locationServicesEnabled() {
             locationManager = CLLocationManager()
@@ -179,10 +177,10 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
         }
     }
 
-    private func convertLatLongToAddress(latitude:Double,longitude:Double){
+    private func convertLatLongToAddress(latitude:Double,longitude:Double) {
         let geoCoder = CLGeocoder()
         let location = CLLocation(latitude: latitude, longitude: longitude)
-        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, _) -> Void in
 
             var placeMark: CLPlacemark!
             placeMark = placemarks?[0]

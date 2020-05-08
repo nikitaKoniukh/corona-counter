@@ -17,20 +17,18 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet var activeLabel: UILabel!
     @IBOutlet var newCasesLabel: UILabel!
     @IBOutlet var flagImg: UIImageView!
-    
+
     @IBOutlet var recoverdTitle: UILabel!
     @IBOutlet var casesTitle: UILabel!
     @IBOutlet var newCasesTitle: UILabel!
     @IBOutlet var activeTitle: UILabel!
 
     let coronaCounterApi = CoronaCounterAPI()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
-
-
 
     }
 
@@ -45,11 +43,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         newCasesTitle.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         activeTitle.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
     }
-    
-    private func addImage(imgUrl: String){
+
+    private func addImage(imgUrl: String) {
         let downloader = ImageDownloader()
         let urlRequest = URLRequest(url: URL(string: imgUrl)!)
-        
+
         downloader.download(urlRequest) { response in
             if case .success(let image) = response.result {
                 self.flagImg.image = image
@@ -73,7 +71,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
         )}
     }
-    
+
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         if activeDisplayMode == .compact {
             self.preferredContentSize = maxSize
@@ -83,14 +81,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             self.preferredContentSize = CGSize(width: maxSize.width, height: 160)
         }
     }
-    
-    private func hideElement(isHidden: Bool){
+
+    private func hideElement(isHidden: Bool) {
         //Values
         //activeLabel.isHidden = isHidden
         casesLabel.isHidden = isHidden
         newCasesLabel.isHidden = isHidden
         recoverdLabel.isHidden = isHidden
-        
+
         //Titles
         recoverdTitle.isHidden = isHidden
         casesTitle.isHidden = isHidden

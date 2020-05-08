@@ -13,7 +13,7 @@ import CoreLocation
 
 class MainViewController: UIViewController, UITableViewDelegate, CLLocationManagerDelegate {
 
-    //MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet var tableView: UITableView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var locationCountryLabel: UILabel!
@@ -27,8 +27,8 @@ class MainViewController: UIViewController, UITableViewDelegate, CLLocationManag
     @IBOutlet var heightConstraintForContainerCountry: NSLayoutConstraint!
     @IBOutlet var currentCountryContainer: UIView!
     @IBOutlet var cardView: UIView!
-    
-    //MARK: - Properties
+
+    // MARK: - Properties
     let disposeBag = DisposeBag()
     let coronaCounterAPI = CoronaCounterAPI()
     var countrydDataSourse = PublishSubject<[Country]>()
@@ -37,7 +37,6 @@ class MainViewController: UIViewController, UITableViewDelegate, CLLocationManag
     var countriesArray = [Country]()
     var currentCountryString: String?
     var currentCountry: Country?
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,16 +53,16 @@ class MainViewController: UIViewController, UITableViewDelegate, CLLocationManag
     private func refreshTableView() {
         tableView.refreshControl = refreshControll
         refreshControll.tintColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-        refreshControll.attributedTitle = NSAttributedString(string: "Refreshing data", attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.8470588235, green: 0.8470588235, blue: 0.8470588235, alpha: 1), NSAttributedString.Key.font: UIFont(name: "AvenirNext-DemiBold", size: 16.0)!])
+        refreshControll.attributedTitle = NSAttributedString(string: "Refreshing data",
+                                                             attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.8470588235, green: 0.8470588235, blue: 0.8470588235, alpha: 1), NSAttributedString.Key.font: UIFont(name: "AvenirNext-DemiBold", size: 16.0)!])
         refreshControll.addTarget(self, action: #selector(fetchData), for: .valueChanged)
     }
 
     private func showTable() {
-        countrydDataSourse.bind(to: tableView.rx.items(cellIdentifier: MAIN_TABLE_VIEW_CELL_ID))
-        {(row,country:Country,cell: CountryTableViewCell) in
+        countrydDataSourse.bind(to: tableView.rx.items(cellIdentifier: MAIN_TABLE_VIEW_CELL_ID)) {(_,country:Country,cell: CountryTableViewCell) in
             DispatchQueue.main.async {
                 cell.configureCell(country: country)
-                if let imageURL = URL(string: country.flag){
+                if let imageURL = URL(string: country.flag) {
                     cell.flagImage.image = UIImage()
                     cell.flagImage.af.setImage(withURL: imageURL)
                 }
@@ -138,12 +137,12 @@ class MainViewController: UIViewController, UITableViewDelegate, CLLocationManag
         infectedTodayLabel.text = String(country.todayCases)
         activeCasesLabel.text = String(country.active)
 
-        if let imageURL = URL(string: country.flag){
+        if let imageURL = URL(string: country.flag) {
             flagImage.af.setImage(withURL: imageURL)
         }
     }
 
-    //MARK: - CLLocationManager
+    // MARK: - CLLocationManager
     private func checkLocationServices() {
         if CLLocationManager.locationServicesEnabled() {
             locationManager = CLLocationManager()
@@ -189,10 +188,10 @@ class MainViewController: UIViewController, UITableViewDelegate, CLLocationManag
         }
     }
 
-    private func convertLatLongToAddress(latitude:Double,longitude:Double){
+    private func convertLatLongToAddress(latitude:Double,longitude:Double) {
         let geoCoder = CLGeocoder()
         let location = CLLocation(latitude: latitude, longitude: longitude)
-        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, _) -> Void in
 
             var placeMark: CLPlacemark!
             placeMark = placemarks?[0]
@@ -219,5 +218,5 @@ class MainViewController: UIViewController, UITableViewDelegate, CLLocationManag
             performSegue(withIdentifier: SEGUE_TO_DETAIL, sender: country)
         }
     }
-    
+
 }

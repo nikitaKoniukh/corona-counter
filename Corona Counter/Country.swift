@@ -26,4 +26,3 @@ struct Country: Codable {
     let continent: String
 
 }
-

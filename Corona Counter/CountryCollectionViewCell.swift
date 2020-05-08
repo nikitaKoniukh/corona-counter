@@ -15,7 +15,7 @@ class CountryCollectionViewCell: UICollectionViewCell {
     @IBOutlet var flagImageView: UIImageView!
     @IBOutlet var countryLbl: UILabel!
     @IBOutlet var pieView: PieChart!
-    
+
     override func layoutSubviews() {
         containerView.setupCardView(cRadius: 8.0, sColor: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), sOffset: CGSize(width: 4, height: 4), sRadius: 4.0, sOpacity: 0.5)
     }
@@ -34,13 +34,13 @@ class CountryCollectionViewCell: UICollectionViewCell {
         } else {
             pieView.models = [
                 PieSliceModel(value: Double(criticalPercentage), color: #colorLiteral(red: 0.9904027581, green: 0.3548480272, blue: 0.3655920029, alpha: 1)),
-                PieSliceModel(value: Double(activeCasesPercentage), color: #colorLiteral(red: 0.3577479124, green: 0.8051960468, blue: 0.9972313046, alpha: 1)),
+                PieSliceModel(value: Double(activeCasesPercentage), color: #colorLiteral(red: 0.3577479124, green: 0.8051960468, blue: 0.9972313046, alpha: 1))
             ]
         }
     }
 
     private func getPercentageForMinorAndSeriousCases(critical: Int, activeCases: Int) -> Double {
-        if critical == 0  {
+        if critical == 0 {
             return 0.0
         } else {
             let criticalPercentage = Double(critical) / Double((activeCases / 100))

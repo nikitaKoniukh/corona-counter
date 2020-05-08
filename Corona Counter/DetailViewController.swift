@@ -12,10 +12,9 @@ import AlamofireImage
 
 class DetailViewController: UIViewController {
 
-    //MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet var firstView: UIView!
     @IBOutlet var secondView: UIView!
-    
 
     @IBOutlet var countryNameLabel: UILabel!
     @IBOutlet var confirmedCasesLabel: UILabel!
@@ -27,12 +26,10 @@ class DetailViewController: UIViewController {
     @IBOutlet var recoveredLabel: UILabel!
     @IBOutlet var continentLabel: UILabel!
     @IBOutlet var flagImage: UIImageView!
-    
-    
+
     let coronaCounterApi = CoronaCounterAPI()
     var country: Country!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         firstView.isHidden = true
@@ -57,7 +54,7 @@ class DetailViewController: UIViewController {
         continentLabel.text = countruResult.continent
     }
 
-    private func getFlagImage(imgUrl: String){
+    private func getFlagImage(imgUrl: String) {
         let downloader = ImageDownloader()
         guard let url = URL(string: imgUrl) else { return }
         let urlRequest = URLRequest(url: url)
@@ -71,4 +68,3 @@ class DetailViewController: UIViewController {
         }
     }
 }
-

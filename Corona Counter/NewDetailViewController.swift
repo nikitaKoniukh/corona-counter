@@ -14,7 +14,7 @@ import RxSwift
 class NewDetailViewController: UIViewController {
 
     //Outlets
-    
+
     @IBOutlet var countryNameLbl: UILabel!
     @IBOutlet var activeCasesCardView: UIView!
     @IBOutlet var minorIndicatorView: UIView!
@@ -28,7 +28,7 @@ class NewDetailViewController: UIViewController {
     @IBOutlet var minorPercentageLbl: UILabel!
     @IBOutlet var backButtonImageView: UIImageView!
     @IBOutlet var bottomContainerView: UIView!
-    
+
     var currentCountry: Country!
 
     override func viewDidLoad() {
@@ -61,7 +61,7 @@ class NewDetailViewController: UIViewController {
         majorPercentageLbl.text = "\(criticalPercentage)%"
         pieChart.models = [
             PieSliceModel(value: Double(criticalPercentage), color: #colorLiteral(red: 0.9904027581, green: 0.3548480272, blue: 0.3655920029, alpha: 1)),
-            PieSliceModel(value: Double(activeCasesPercentage), color: #colorLiteral(red: 0.3577479124, green: 0.8051960468, blue: 0.9972313046, alpha: 1)),
+            PieSliceModel(value: Double(activeCasesPercentage), color: #colorLiteral(red: 0.3577479124, green: 0.8051960468, blue: 0.9972313046, alpha: 1))
         ]
     }
 
@@ -69,7 +69,6 @@ class NewDetailViewController: UIViewController {
         let criticalPercentage = critical / (activeCases / 100)
         return criticalPercentage
     }
-    
 
     private func setupView() {
         self.navigationController?.navigationBar.isHidden = true
