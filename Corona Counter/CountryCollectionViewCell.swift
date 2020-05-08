@@ -27,6 +27,8 @@ class CountryCollectionViewCell: UICollectionViewCell {
 
         countryLbl.text = country.country
 
+        pieView.clear()
+        pieView.animDuration = 0
         if (criticalPercentage == 0.0) {
             pieView.models = [
                 PieSliceModel(value: activeCasesPercentage, color: #colorLiteral(red: 0.3577479124, green: 0.8051960468, blue: 0.9972313046, alpha: 1))

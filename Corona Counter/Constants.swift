@@ -12,6 +12,7 @@ let BASE_URL = "https://corona.lmao.ninja/v2/countries/"
 
 let MAIN_TABLE_VIEW_CELL_ID = "minTableViewCellId"
 let COLLECTION_VIEW_CELL_ID = "collectionViewCountryCellId"
+let COLLECTION_VIEW_DETAIL_CELL_ID = "collectionViewDetailCountryCellId"
 
 let SEGUE_TO_DETAIL = "toDetails"
 let SEGUE_TO_NEW_DETAILS = "toNewDetails"

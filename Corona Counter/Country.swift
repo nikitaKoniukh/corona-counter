@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Country: Codable {
+struct Country: Codable, Equatable {
     let updated: Int
     let country: String
     let flag: String
@@ -25,4 +25,7 @@ struct Country: Codable {
     let testsPerOneMillion: Int
     let continent: String
 
+    static func == (lhs: Country, rhs: Country) -> Bool {
+        return lhs.country == rhs.country
+    }
 }
