@@ -11,8 +11,9 @@ import PieCharts
 import RxCocoa
 import RxSwift
 import CoreLocation
+import SafariServices
 
-class NewMainViewController: UIViewController, CLLocationManagerDelegate, UICollectionViewDelegate {
+class NewMainViewController: UIViewController, CLLocationManagerDelegate, UICollectionViewDelegate, UITableViewDelegate {
 
     // MARK: - Outlets
     @IBOutlet var totalCasesLbl: UILabel!
@@ -31,16 +32,20 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
     @IBOutlet var majorPercentageLbl: UILabel!
     @IBOutlet var minorPercentageLbl: UILabel!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var newsTableView: UITableView!
 
     // MARK: - Properties
     private let disposeBag = DisposeBag()
     private let coronaApi = CoronaCounterAPI()
     private var countrydDataSourse = PublishSubject<[Country]>()
+    private var newsDataSourse = PublishSubject<[News]>()
     private let refreshControll = UIRefreshControl()
     private var locationManager: CLLocationManager?
     private var currentCountryString: String?
     private var currentCountry: Country?
     private var countriesArray = [Country]()
+
+    let newsXmlParser = NewsXmlParser()
 
     // MARK: - Lyfecycle
     override func viewDidLoad() {
@@ -49,12 +54,15 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
         setupTapGestureForCurrentCountry()
         setupView()
         showCollectionView()
+        showTableView()
         didSelectCollectionViewItem()
+        didSelectNewsTableViewCell()
         collectionView.rx.setDelegate(self).disposed(by: disposeBag)
+        newsTableView.rx.setDelegate(self).disposed(by: disposeBag)
 
         fetchAllCountries()
         fetchTotalForAllCountries()
-
+        fetchAllNews()
     }
 
     private func setupTapGestureForCurrentCountry() {
@@ -66,6 +74,29 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
         if let country = currentCountry {
             performSegue(withIdentifier: SEGUE_TO_NEW_DETAILS, sender: country)
         }
+    }
+
+    // MARK: - NewsTableView
+
+    private func showTableView() {
+        newsDataSourse.bind(to: newsTableView.rx.items(cellIdentifier: NEWS_TABLE_VIEW_CELL_ID)) {(_,news:News,cell: NewsTableViewCell) in
+            DispatchQueue.main.async {
+                cell.configureCell(news: news)
+            }
+        }.disposed(by: disposeBag)
+    }
+    
+    private func didSelectNewsTableViewCell() {
+        newsTableView.rx.modelSelected(News.self).subscribe(onNext: { item in
+            print(item.title)
+            if let url = URL(string: item.link) {
+                let config = SFSafariViewController.Configuration()
+                config.entersReaderIfAvailable = true
+                
+                let vc = SFSafariViewController(url: url, configuration: config)
+                self.present(vc, animated: true)
+            }
+        }).disposed(by: disposeBag)
     }
 
     // MARK: - CollectionView
@@ -88,6 +119,14 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
     }
 
     // MARK: - API
+
+    private func fetchAllNews() {
+        newsXmlParser.startParsingWithContentsOfURL { (newsResult) in
+            print(newsResult)
+            self.newsDataSourse.onNext(newsResult)
+        }
+    }
+
     private func fetchAllCountries() {
         coronaApi.fetchAllCountries { (result) in
             let sortedByActiveCases = result.sorted {

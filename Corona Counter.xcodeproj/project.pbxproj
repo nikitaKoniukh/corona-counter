@@ -14,22 +14,25 @@
 		17ABF0CB245AB38300C8F9D1 /* Today MSApps Corona Counter.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 17ABF0BF245AB38300C8F9D1 /* Today MSApps Corona Counter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CA1D8F2C6D5FDE237F6E3EEC /* Pods_Corona_Counter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45CC6902C9BB901D115EE436 /* Pods_Corona_Counter.framework */; };
 		CA27ADA72457174A0091ACD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27ADA62457174A0091ACD2 /* AppDelegate.swift */; };
-		CA27ADAB2457174A0091ACD2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27ADAA2457174A0091ACD2 /* DetailViewController.swift */; };
 		CA27ADAE2457174A0091ACD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA27ADAC2457174A0091ACD2 /* Main.storyboard */; };
 		CA27ADB02457174B0091ACD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA27ADAF2457174B0091ACD2 /* Assets.xcassets */; };
 		CA27ADB32457174B0091ACD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA27ADB12457174B0091ACD2 /* LaunchScreen.storyboard */; };
 		CA27ADBE245719170091ACD2 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27ADBD245719170091ACD2 /* Country.swift */; };
 		CA27ADC024571A6E0091ACD2 /* CoronaCounterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27ADBF24571A6E0091ACD2 /* CoronaCounterAPI.swift */; };
 		CA27ADC324571AC70091ACD2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27ADC224571AC70091ACD2 /* Constants.swift */; };
-		CA27ADC9245B0BCC0091ACD2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27ADC6245B0BC10091ACD2 /* MainViewController.swift */; };
 		CA27ADCC245B13C20091ACD2 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27ADCB245B13C20091ACD2 /* CountryTableViewCell.swift */; };
 		CA3C16362464316300829090 /* NewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C16352464316300829090 /* NewDetailViewController.swift */; };
+		CA3C163E2467391A00829090 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C163D2467391A00829090 /* News.swift */; };
+		CA3C164024673A3300829090 /* NewsXmlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C163F24673A3300829090 /* NewsXmlParser.swift */; };
 		CA55E22C2461E27800435514 /* UIView+CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA55E22B2461E27800435514 /* UIView+CardView.swift */; };
 		CA55E22F2461E57B00435514 /* NewMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA55E22E2461E57B00435514 /* NewMainViewController.swift */; };
 		CA8C9CCC2463480A001FE4CF /* Number+Commas.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C9CCB2463480A001FE4CF /* Number+Commas.swift */; };
 		CA8C9CCE2464002A001FE4CF /* CountryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C9CCD2464002A001FE4CF /* CountryCollectionViewCell.swift */; };
 		CA9CF460245EE537000E5328 /* CoronaCounterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27ADBF24571A6E0091ACD2 /* CoronaCounterAPI.swift */; };
 		CA9CF461245EE54E000E5328 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27ADBD245719170091ACD2 /* Country.swift */; };
+		CAF3C9B024681ECB00E0B5D3 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3C9AF24681ECB00E0B5D3 /* NewsTableViewCell.swift */; };
+		CAF3C9B22468268E00E0B5D3 /* String+RemoveHTMLCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3C9B12468268E00E0B5D3 /* String+RemoveHTMLCharacters.swift */; };
+		CAF3C9B424682AE100E0B5D3 /* Date+FeedsDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3C9B324682AE100E0B5D3 /* Date+FeedsDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +73,6 @@
 		904E355F4EBEEA1D8EE100F2 /* Pods-Corona Counter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Corona Counter.debug.xcconfig"; path = "Target Support Files/Pods-Corona Counter/Pods-Corona Counter.debug.xcconfig"; sourceTree = "<group>"; };
 		CA27ADA32457174A0091ACD2 /* Corona Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Corona Counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA27ADA62457174A0091ACD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CA27ADAA2457174A0091ACD2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CA27ADAD2457174A0091ACD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA27ADAF2457174B0091ACD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA27ADB22457174B0091ACD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,13 +80,17 @@
 		CA27ADBD245719170091ACD2 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		CA27ADBF24571A6E0091ACD2 /* CoronaCounterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaCounterAPI.swift; sourceTree = "<group>"; };
 		CA27ADC224571AC70091ACD2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		CA27ADC6245B0BC10091ACD2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CA27ADCB245B13C20091ACD2 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		CA3C16352464316300829090 /* NewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDetailViewController.swift; sourceTree = "<group>"; };
+		CA3C163D2467391A00829090 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		CA3C163F24673A3300829090 /* NewsXmlParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsXmlParser.swift; sourceTree = "<group>"; };
 		CA55E22B2461E27800435514 /* UIView+CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CardView.swift"; sourceTree = "<group>"; };
 		CA55E22E2461E57B00435514 /* NewMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMainViewController.swift; sourceTree = "<group>"; };
 		CA8C9CCB2463480A001FE4CF /* Number+Commas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+Commas.swift"; sourceTree = "<group>"; };
 		CA8C9CCD2464002A001FE4CF /* CountryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCollectionViewCell.swift; sourceTree = "<group>"; };
+		CAF3C9AF24681ECB00E0B5D3 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		CAF3C9B12468268E00E0B5D3 /* String+RemoveHTMLCharacters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+RemoveHTMLCharacters.swift"; sourceTree = "<group>"; };
+		CAF3C9B324682AE100E0B5D3 /* Date+FeedsDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+FeedsDate.swift"; sourceTree = "<group>"; };
 		DE573F6E4DEB79EE84CFF8D5 /* Pods-Corona Counter-CountryWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Corona Counter-CountryWidget.release.xcconfig"; path = "Target Support Files/Pods-Corona Counter-CountryWidget/Pods-Corona Counter-CountryWidget.release.xcconfig"; sourceTree = "<group>"; };
 		F55A2A6F585DFCCBA213106B /* Pods_Corona_Counter_CountryWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Corona_Counter_CountryWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE46DF7795EED5CAE03D6538 /* Pods-Corona Counter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Corona Counter.release.xcconfig"; path = "Target Support Files/Pods-Corona Counter/Pods-Corona Counter.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,8 +181,6 @@
 				CA27ADBC245718D10091ACD2 /* Model */,
 				CA27ADBB245718C60091ACD2 /* API */,
 				CA27ADBA245718980091ACD2 /* Helpers */,
-				CA27ADAA2457174A0091ACD2 /* DetailViewController.swift */,
-				CA27ADC6245B0BC10091ACD2 /* MainViewController.swift */,
 				CA27ADAC2457174A0091ACD2 /* Main.storyboard */,
 			);
 			path = "Corona Counter";
@@ -197,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				CA27ADBF24571A6E0091ACD2 /* CoronaCounterAPI.swift */,
+				CA3C163F24673A3300829090 /* NewsXmlParser.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				CA27ADBD245719170091ACD2 /* Country.swift */,
+				CA3C163D2467391A00829090 /* News.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -222,6 +228,7 @@
 			children = (
 				CA27ADCB245B13C20091ACD2 /* CountryTableViewCell.swift */,
 				CA8C9CCD2464002A001FE4CF /* CountryCollectionViewCell.swift */,
+				CAF3C9AF24681ECB00E0B5D3 /* NewsTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -229,7 +236,9 @@
 		CA55E22A2461E25600435514 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CAF3C9B324682AE100E0B5D3 /* Date+FeedsDate.swift */,
 				CA55E22B2461E27800435514 /* UIView+CardView.swift */,
+				CAF3C9B12468268E00E0B5D3 /* String+RemoveHTMLCharacters.swift */,
 				CA8C9CCB2463480A001FE4CF /* Number+Commas.swift */,
 			);
 			name = Extensions;
@@ -446,17 +455,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA3C164024673A3300829090 /* NewsXmlParser.swift in Sources */,
 				CA8C9CCC2463480A001FE4CF /* Number+Commas.swift in Sources */,
+				CAF3C9B024681ECB00E0B5D3 /* NewsTableViewCell.swift in Sources */,
+				CAF3C9B22468268E00E0B5D3 /* String+RemoveHTMLCharacters.swift in Sources */,
 				CA27ADC324571AC70091ACD2 /* Constants.swift in Sources */,
 				CA55E22C2461E27800435514 /* UIView+CardView.swift in Sources */,
-				CA27ADAB2457174A0091ACD2 /* DetailViewController.swift in Sources */,
 				CA3C16362464316300829090 /* NewDetailViewController.swift in Sources */,
 				CA27ADC024571A6E0091ACD2 /* CoronaCounterAPI.swift in Sources */,
-				CA27ADC9245B0BCC0091ACD2 /* MainViewController.swift in Sources */,
 				CA27ADBE245719170091ACD2 /* Country.swift in Sources */,
 				CA55E22F2461E57B00435514 /* NewMainViewController.swift in Sources */,
+				CAF3C9B424682AE100E0B5D3 /* Date+FeedsDate.swift in Sources */,
 				CA27ADCC245B13C20091ACD2 /* CountryTableViewCell.swift in Sources */,
 				CA27ADA72457174A0091ACD2 /* AppDelegate.swift in Sources */,
+				CA3C163E2467391A00829090 /* News.swift in Sources */,
 				CA8C9CCE2464002A001FE4CF /* CountryCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
