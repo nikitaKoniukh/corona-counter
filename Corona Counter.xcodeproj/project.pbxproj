@@ -33,6 +33,7 @@
 		CAF3C9B024681ECB00E0B5D3 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3C9AF24681ECB00E0B5D3 /* NewsTableViewCell.swift */; };
 		CAF3C9B22468268E00E0B5D3 /* String+RemoveHTMLCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3C9B12468268E00E0B5D3 /* String+RemoveHTMLCharacters.swift */; };
 		CAF3C9B424682AE100E0B5D3 /* Date+FeedsDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3C9B324682AE100E0B5D3 /* Date+FeedsDate.swift */; };
+		CAF3C9CA24683BB900E0B5D3 /* Corona_CounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3C9C924683BB900E0B5D3 /* Corona_CounterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 17ABF0BE245AB38300C8F9D1;
 			remoteInfo = CountryWidget;
+		};
+		CAF3C9CC24683BB900E0B5D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA27AD9B2457174A0091ACD2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA27ADA22457174A0091ACD2;
+			remoteInfo = "Corona Counter";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -91,6 +99,9 @@
 		CAF3C9AF24681ECB00E0B5D3 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		CAF3C9B12468268E00E0B5D3 /* String+RemoveHTMLCharacters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+RemoveHTMLCharacters.swift"; sourceTree = "<group>"; };
 		CAF3C9B324682AE100E0B5D3 /* Date+FeedsDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+FeedsDate.swift"; sourceTree = "<group>"; };
+		CAF3C9C724683BB900E0B5D3 /* Corona CounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Corona CounterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAF3C9C924683BB900E0B5D3 /* Corona_CounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corona_CounterTests.swift; sourceTree = "<group>"; };
+		CAF3C9CB24683BB900E0B5D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE573F6E4DEB79EE84CFF8D5 /* Pods-Corona Counter-CountryWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Corona Counter-CountryWidget.release.xcconfig"; path = "Target Support Files/Pods-Corona Counter-CountryWidget/Pods-Corona Counter-CountryWidget.release.xcconfig"; sourceTree = "<group>"; };
 		F55A2A6F585DFCCBA213106B /* Pods_Corona_Counter_CountryWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Corona_Counter_CountryWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE46DF7795EED5CAE03D6538 /* Pods-Corona Counter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Corona Counter.release.xcconfig"; path = "Target Support Files/Pods-Corona Counter/Pods-Corona Counter.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +122,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA1D8F2C6D5FDE237F6E3EEC /* Pods_Corona_Counter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF3C9C424683BB900E0B5D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +173,7 @@
 			children = (
 				CA27ADA52457174A0091ACD2 /* Corona Counter */,
 				17ABF0C2245AB38300C8F9D1 /* CountryWidget */,
+				CAF3C9C824683BB900E0B5D3 /* Corona CounterTests */,
 				CA27ADA42457174A0091ACD2 /* Products */,
 				9D49969D0BEE0BAFCFBE9214 /* Pods */,
 				AF2433A84B5190B5737B06A3 /* Frameworks */,
@@ -166,6 +185,7 @@
 			children = (
 				CA27ADA32457174A0091ACD2 /* Corona Counter.app */,
 				17ABF0BF245AB38300C8F9D1 /* Today MSApps Corona Counter.appex */,
+				CAF3C9C724683BB900E0B5D3 /* Corona CounterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,6 +273,15 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		CAF3C9C824683BB900E0B5D3 /* Corona CounterTests */ = {
+			isa = PBXGroup;
+			children = (
+				CAF3C9C924683BB900E0B5D3 /* Corona_CounterTests.swift */,
+				CAF3C9CB24683BB900E0B5D3 /* Info.plist */,
+			);
+			path = "Corona CounterTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -296,13 +325,31 @@
 			productReference = CA27ADA32457174A0091ACD2 /* Corona Counter.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CAF3C9C624683BB900E0B5D3 /* Corona CounterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAF3C9D024683BB900E0B5D3 /* Build configuration list for PBXNativeTarget "Corona CounterTests" */;
+			buildPhases = (
+				CAF3C9C324683BB900E0B5D3 /* Sources */,
+				CAF3C9C424683BB900E0B5D3 /* Frameworks */,
+				CAF3C9C524683BB900E0B5D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CAF3C9CD24683BB900E0B5D3 /* PBXTargetDependency */,
+			);
+			name = "Corona CounterTests";
+			productName = "Corona CounterTests";
+			productReference = CAF3C9C724683BB900E0B5D3 /* Corona CounterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		CA27AD9B2457174A0091ACD2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Nikita Koniukh";
 				TargetAttributes = {
@@ -316,6 +363,10 @@
 								enabled = 0;
 							};
 						};
+					};
+					CAF3C9C624683BB900E0B5D3 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = CA27ADA22457174A0091ACD2;
 					};
 				};
 			};
@@ -334,6 +385,7 @@
 			targets = (
 				CA27ADA22457174A0091ACD2 /* Corona Counter */,
 				17ABF0BE245AB38300C8F9D1 /* CountryWidget */,
+				CAF3C9C624683BB900E0B5D3 /* Corona CounterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -354,6 +406,13 @@
 				CA27ADB32457174B0091ACD2 /* LaunchScreen.storyboard in Resources */,
 				CA27ADB02457174B0091ACD2 /* Assets.xcassets in Resources */,
 				CA27ADAE2457174A0091ACD2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF3C9C524683BB900E0B5D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +532,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CAF3C9C324683BB900E0B5D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAF3C9CA24683BB900E0B5D3 /* Corona_CounterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -480,6 +547,11 @@
 			isa = PBXTargetDependency;
 			target = 17ABF0BE245AB38300C8F9D1 /* CountryWidget */;
 			targetProxy = 17ABF0C9245AB38300C8F9D1 /* PBXContainerItemProxy */;
+		};
+		CAF3C9CD24683BB900E0B5D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA27ADA22457174A0091ACD2 /* Corona Counter */;
+			targetProxy = CAF3C9CC24683BB900E0B5D3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -715,6 +787,48 @@
 			};
 			name = Release;
 		};
+		CAF3C9CE24683BB900E0B5D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3K3Q4658XN;
+				INFOPLIST_FILE = "Corona CounterTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.msapps.Corona-CounterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Corona Counter.app/Corona Counter";
+			};
+			name = Debug;
+		};
+		CAF3C9CF24683BB900E0B5D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3K3Q4658XN;
+				INFOPLIST_FILE = "Corona CounterTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.msapps.Corona-CounterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Corona Counter.app/Corona Counter";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -741,6 +855,15 @@
 			buildConfigurations = (
 				CA27ADB82457174B0091ACD2 /* Debug */,
 				CA27ADB92457174B0091ACD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAF3C9D024683BB900E0B5D3 /* Build configuration list for PBXNativeTarget "Corona CounterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAF3C9CE24683BB900E0B5D3 /* Debug */,
+				CAF3C9CF24683BB900E0B5D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

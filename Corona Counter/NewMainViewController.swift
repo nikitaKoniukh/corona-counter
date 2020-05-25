@@ -85,14 +85,14 @@ class NewMainViewController: UIViewController, CLLocationManagerDelegate, UIColl
             }
         }.disposed(by: disposeBag)
     }
-    
+
     private func didSelectNewsTableViewCell() {
         newsTableView.rx.modelSelected(News.self).subscribe(onNext: { item in
             print(item.title)
             if let url = URL(string: item.link) {
                 let config = SFSafariViewController.Configuration()
                 config.entersReaderIfAvailable = true
-                
+
                 let vc = SFSafariViewController(url: url, configuration: config)
                 self.present(vc, animated: true)
             }

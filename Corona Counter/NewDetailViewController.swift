@@ -58,7 +58,7 @@ class NewDetailViewController: UIViewController {
     private func showCurrentCountry(currentCountry: Country) {
         countryNameLbl.text = currentCountry.country
         activeCasesLbl.text = currentCountry.active.commaRepresentation
-        recoveredCasesLbl.text = currentCountry.active.commaRepresentation
+        recoveredCasesLbl.text = currentCountry.recovered.commaRepresentation
         deathLbl.text = currentCountry.deaths.commaRepresentation
 
         let criticalPercentage =  getPercentageForMinorAndSeriousCases(critical: currentCountry.critical, activeCases: currentCountry.active)

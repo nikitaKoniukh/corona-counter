@@ -36,8 +36,8 @@ class CoronaCounterAPI {
                     let recovered = res["recovered"] as! Int
                     let active = res["active"] as! Int
                     let critical = res["critical"] as! Int
-                    let casesPerOneMillion = res["casesPerOneMillion"] as! Int
-                    let deathsPerOneMillion = res["deathsPerOneMillion"] as! Int
+                    let casesPerOneMillion = res["casesPerOneMillion"] as! Double
+                    let deathsPerOneMillion = res["deathsPerOneMillion"] as! Double
                     let tests = res["tests"] as! Int
                     let testsPerOneMillion = res["testsPerOneMillion"] as! Int
                     let continent = res["continent"] as! String
@@ -52,8 +52,8 @@ class CoronaCounterAPI {
                                                   recovered: recovered,
                                                   active: active,
                                                   critical: critical,
-                                                  casesPerOneMillion: casesPerOneMillion,
-                                                  deathsPerOneMillion: deathsPerOneMillion,
+                                                  casesPerOneMillion: Int(casesPerOneMillion),
+                                                  deathsPerOneMillion: Int(deathsPerOneMillion),
                                                   tests: tests,
                                                   testsPerOneMillion: testsPerOneMillion,
                                                   continent: continent))
@@ -72,13 +72,13 @@ class CoronaCounterAPI {
     var country: String?
     func fetchCurrentCountry(currentCountryName: String, completion: @escaping (Country) -> Void) {
         country = currentCountryName
-//        if let userDefaults = UserDefaults(suiteName: "group.MSSmart") {
-//            if userDefaults.string(forKey: "country") != nil {
-//                country = userDefaults.string(forKey: "country")!
-//            } else {
-//                country = "israel"
-//            }
-//        }
+        //        if let userDefaults = UserDefaults(suiteName: "group.MSSmart") {
+        //            if userDefaults.string(forKey: "country") != nil {
+        //                country = userDefaults.string(forKey: "country")!
+        //            } else {
+        //                country = "israel"
+        //            }
+        //        }
 
         if country == "United States" {
             country = "USA"
@@ -160,7 +160,7 @@ class CoronaCounterAPI {
                 let active = resultDict["active"] as! Int
                 let critical = resultDict["critical"] as! Int
                 let casesPerOneMillion = resultDict["casesPerOneMillion"] as! Int
-                let deathsPerOneMillion = resultDict["deathsPerOneMillion"] as! Int
+                let deathsPerOneMillion = resultDict["deathsPerOneMillion"] as! Double
                 let tests = resultDict["tests"] as! Int
                 let testsPerOneMillion = resultDict["testsPerOneMillion"] as! Double
 
@@ -175,7 +175,7 @@ class CoronaCounterAPI {
                                      active: active,
                                      critical: critical,
                                      casesPerOneMillion: casesPerOneMillion,
-                                     deathsPerOneMillion: deathsPerOneMillion,
+                                     deathsPerOneMillion: Int(deathsPerOneMillion),
                                      tests: tests,
                                      testsPerOneMillion: Int(testsPerOneMillion), continent: "")
 
